@@ -40,7 +40,7 @@ server.js dosyasında, 'aladagemre' yi kendi twitter adınızla değiştirin.
     
     app.set('admin_user', 'aladagemre');
 
-Sonra şu göreceli adrese gidin: "/admin/topic_list"
+Sonra şu göreceli adrese gidin: "/admin/topic_list/"
 
 ## Instructions
 
