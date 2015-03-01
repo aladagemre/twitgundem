@@ -61,10 +61,11 @@ app.configure(function() {
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-//app.listen(port);
-//console.log('The magic happens on port ' + port);
+var server = app.listen(3000, '0.0.0.0', function() {
+  console.log('Listening on port %d', server.address().port);
+});
 
-
+/*
 var cluster = require('cluster');
 var http = require('http');
 var numCPUs = require('os').cpus().length;
@@ -84,3 +85,4 @@ if (cluster.isMaster) {
     app.listen(port);
     console.log('The magic happens on port ' + port);
 }
+*/
