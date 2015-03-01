@@ -6,10 +6,17 @@ Teknoloji olarak Node.JS, Express Framework, Easy Node Authentication (Passport)
 TwitGundem is a platform where users can express their opinions on a topic defined daily, based on the current events. Users can login via Twitter.
 Node.JS, Express Framework, Easy Node Authentication (Passport) is used for this project.
 
-## Demo
+## Ekran Görüntüleri (Screenshots)
 
+### Anasayfa
 ![Anasayfa](img/anasayfa.png?raw=true "Anasayfa")
+
+### Konu Detay
+
 ![Konu](img/konu.png?raw=true "Konu")
+
+### Admin
+
 ![Admin](img/admin.png?raw=true "Admin")
 
 ## Kurulum
