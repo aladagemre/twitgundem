@@ -61,7 +61,7 @@ app.configure(function() {
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-var server = app.listen(3000, '0.0.0.0', function() {
+var server = app.listen(port, '0.0.0.0', function() {
   console.log('Listening on port %d', server.address().port);
 });
 
