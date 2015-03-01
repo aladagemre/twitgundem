@@ -30,6 +30,11 @@ Node.JS, Express Framework, Easy Node Authentication (Passport) is used for this
 
 Opsiyonel: base-10-2.html'de Google Ads ayarlanabilir. newrelic.js'de new relic ayarları yapılabilir.
 
+## Docker
+
+    docker build -t aladagemre/twitgundem .
+    docker run -p 3000:3000 --env APP_URL=http://mysite.com:3000 --env TWITTER_API_KEY=xxx --env TWITTER_API_SECRET=xxx aladagemre/twitgundem
+
 ## Instructions
 
 If you would like to download the code and try it for yourself:
