@@ -26,14 +26,21 @@ Node.JS, Express Framework, Easy Node Authentication (Passport) is used for this
 3. `config/database.js` dosyasında gerekli veritabanı bilgilerini girin.
 4. `config/auth.js` dosyasında gerekli API anahtarlarını girin ya da ortam değişkeni (env) olarak bu bilgileri tanımlayın.
 5. `node server.js` diyerek sistemi çalıştırın.
-6. `http://localhost:8080` adresine gidin, sonucu görün.
+6. `http://localhost:3000` adresine gidin, sonucu görün.
 
-Opsiyonel: base-10-2.html'de Google Ads ayarlanabilir. newrelic.js'de new relic ayarları yapılabilir.
 
 ## Docker
 
     docker build -t aladagemre/twitgundem .
     docker run -p 3000:3000 --env APP_URL=http://mysite.com:3000 --env TWITTER_API_KEY=xxx --env TWITTER_API_SECRET=xxx aladagemre/twitgundem
+
+## Admin Panel
+
+server.js dosyasında, 'aladagemre' yi kendi twitter adınızla değiştirin.
+    
+    app.set('admin_user', 'aladagemre');
+
+Sonra şu göreceli adrese gidin: "/admin/topic_list"
 
 ## Instructions
 
@@ -44,7 +51,8 @@ If you would like to download the code and try it for yourself:
 3. Change out the database configuration in config/database.js
 4. Change out auth keys in config/auth.js or define them as environment variables.
 5. Launch: `node server.js`
-6. Visit in your browser at: `http://localhost:8080`
+6. Visit in your browser at: `http://localhost:3000`
 
-Optional: base-10-2.html contains Google ads code that can be adjusted. newrelic.js can be configured as well.
 
+    
+    

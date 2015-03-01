@@ -32,7 +32,7 @@ app.configure(function() {
 
 	//app.set('view engine', 'ejs'); // set up ejs for templating
     app.engine('html', swig.renderFile);
-
+    app.set('admin_user', 'aladagemre');
     app.set('view engine', 'html');
     app.set('views', __dirname + '/views');
     app.use(express.static(__dirname + '/public'));

@@ -223,7 +223,7 @@ function isAdmin(req,res, next){
     if (!req.isAuthenticated())
         res.redirect('/auth/twitter');
 
-    if (req.user && (req.user.username == "aladagemre" || req.user.admin)){
+    if (req.user && (req.user.username == app.get('admin_user') || req.user.admin)){
         return next();
     } else {
         res.status(403);
