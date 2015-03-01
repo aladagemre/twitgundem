@@ -1,0 +1,28 @@
+{%extends "../base-10-2.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-3" style="border-right: 1px solid lightgray">
+        <div class="thumbnail">
+            <img src="{{ user.avatar }}"/>
+        </div>
+        <p style="text-align: center; font-size:2em"><code>{{ user.username }}</code></p>
+        <hr/>
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="/profil/">
+                    Hesap Bilgilerim
+                </a>
+            </li>
+            <li>
+                <a href="/yorumlarim/">
+                    Son Yorumlar
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-7">
+        {% block profile_right %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

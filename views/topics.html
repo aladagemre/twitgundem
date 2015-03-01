@@ -1,0 +1,9 @@
+{% extends "base-10-2.html" %}
+{% block content %}
+
+<h2>Bugünün konuları - {{ date }}</h2>
+{% for topic in topics %}
+<li><a href="/konular/{{ topic.slug }}/">{{ topic.title }}</a></li>
+{% endfor %}
+
+{% endblock %}

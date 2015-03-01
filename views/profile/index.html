@@ -1,0 +1,31 @@
+{%extends "base.html" %}
+{% block profile_right %}
+    <h3>Kişisel Bilgilerin</h3>
+    <p>
+        <img src="/img/twitter.png">
+        {% if user.twitter.token %}
+        <a href="https://twitter.com/{{user.twitter.username}}">@{{user.twitter.username}}</a>
+        | <a href="/unlink/twitter">Bağı Kopar</a>
+        {% endif %}
+    </p>
+
+    <p>
+        <img src="/img/facebook.png">
+        {% if user.facebook.id %}
+        <a href="https://www.facebook.com/{{user.facebook.id}}">{{user.facebook.name}}</a>
+        <a href="/unlink/facebook"> Bağı Kopar</a>
+        {% else %}
+        <a href="/connect/facebook"> Facebook Hesabını Bağla</a>
+        {% endif %}
+    </p>
+    <p>
+        <img src="/img/email.png">
+        {% if user.local.email %}
+        {{ user.local.email }} |
+        <a href="/unlink/local">Bağı Kopar</a>
+        {% else %}
+        <a href="/connect/local">E-posta Adresini Bağla</a>
+        {% endif %}
+    </p>
+    <hr/>
+{% endblock %}

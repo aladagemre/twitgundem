@@ -1,0 +1,15 @@
+{% extends "base-10-2.html" %}
+{% block content %}
+Yeni Konu ekle:
+<form action="/admin/new_topic/" method="post">
+    <input type="text" name="title"/>
+    <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
+    <input type="submit" value="Ekle"/>
+</form>
+
+Konular:
+{% for topic in topics %}
+    <li><a href="/konular/{{ topic.slug }}/">{{ topic.title }}</a></li>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron text-center">
+            <h1><span class="fa fa-lock"></span> Twit Gündem'e Hoşgeldiniz.</h1>
+            <h3>Gündeme dair ne düşünüyorsun? Sen de fikrini belirt.</h3>
+            {% if not user %}
+            <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter ile Giriş Yap</a>
+            {% endif %}
+            <a href="/konular/" class="btn btn-success"><span class="fa fa-twitter"></span> Bugünün Konularına Bak</a>
+
+            <!--
+            <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+            <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+            <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+            <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
+            -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

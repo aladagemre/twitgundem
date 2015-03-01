@@ -1,0 +1,21 @@
+{% extends "base-10-2.html" %}
+{% block content %}
+<div class="well" style="width: 40%">
+    <h2>Kullanıcı adı tanımlayın</h2>
+    {%if messages.length %}<div class="alert alert-danger">{{ messages }}</div>{%endif %}
+    <form action="/setusername/" method="post">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">@</span>
+            <input type="text" name="username" value="{{ suggestion }}" placeholder="kullanıciadi" class="form-control"/>
+            <input type="hidden" name="_csrf" value="{{ _csrf }}" />
+            <span class="input-group-btn">
+                <input type="submit" value="Tanımla" class="btn btn-success"/>
+            </span>
+        </div>
+    </form>
+
+
+
+</div>
+
+{% endblock %}

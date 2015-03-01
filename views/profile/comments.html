@@ -1,0 +1,7 @@
+{%extends "base.html" %}
+{% block profile_right %}
+Son Yorumlar:
+{% for comment in comments %}
+<div class="well"><a href="/konular/{{comment.topic.toString()}}/">Konu</a><p>{{ comment.text }}</p></div>
+{% endfor %}
+{% endblock %}

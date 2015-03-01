@@ -1,0 +1,22 @@
+{%extends "../base-10-2.html" %}
+    {% block content %}
+    <div class="row">
+        <div class="col-md-3" style="border-right: 1px solid lightgray">
+            <div class="thumbnail">
+                <img src="{{ target.avatar }}"/>
+            </div>
+            {% if target.twitter.username %}
+            <span class="fa fa-twitter"></span> Twitter: <a href="https://twitter.com/{{target.twitter.username}}">@{{target.twitter.username}}</a>
+            {% endif %}
+        </div>
+        <div class="col-md-7">
+            <div class="page-header text-center">
+                <h1><span class="fa fa-anchor"></span></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base-10-2.html" %}
+{% block extra_head %}
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+        function localize(t)
+        {
+            return new Date(t+" UTC").toString('d.m.Y H:i:s');
+        }
+    $(document).ready(function(){
+        var dates = $(".date");
+        for (var i=0; i<dates.length; i++){
+            dates[i].innerHTML = localize(dates[i].innerHTML);
+        }
+
+    })
+    </script>
+{% endblock %}
+{% block content %}
+    <div>
+    <h2>{{ topic.title }}</h2>
+    </div>
+    <hr/>
+    {% if user %}
+    <form action="./comment/" method="post">
+        <textarea name="text" style="width: 100%;" rows="5" placeholder="Ne düşünüyorsun?"></textarea>
+        <input type="hidden" name="_csrf" value="{{ _csrf }}" />
+        <br/><br/>
+        <input type="submit" class="btn btn-lg btn-success" value="Yorum Ekle"/>
+    </form>
+    {% else %}
+    Yorum yapmak için lütfen <a href="/auth/twitter/">Giriş Yapın</a>.
+    {% endif %}
+    <br/>
+    <h3>Yorumlar</h3>
+
+    {% for comment in comments %}
+        <div class="well" style="min-height: 75px">
+            <div style="float:left; margin-right:1em; margin-bottom:2em; text-align: center">
+                <div class="arrow-up"></div>
+                {{ comment.upvoters.length - comment.downvoters.length }}
+                <div class="arrow-down"></div>
+            </div>
+            {{ comment.text }}
+
+            <div style="font-size: 0.7em; color: darkgray; text-align: right; margin-top:0.5em">
+                    <a href="/profil/{{ comment.author }}/">{{ comment.author }}</a>,
+                <span class="date">{{ comment.createdAt.toString() }}</span>
+            </div>
+
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
